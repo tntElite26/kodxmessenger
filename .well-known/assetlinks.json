@@ -1,1 +1,13 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.kodx.messenger",
+      "sha256_cert_fingerprints": [
+        "54:5F:FE:F4:01:10:FD:AB:EF:50:18:D0:A5:18:7A:1E:4E:99:03:3F:B0:BB:FE:7E:AE:66:6C:D8:DA:3A:D4:25"
+      ]
+    }
+  }
+]
 
