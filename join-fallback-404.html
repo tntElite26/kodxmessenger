@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Invitación a Kodx Messenger</title>
+<style>
+  body { font-family: system-ui, sans-serif; background:#111; color:#eee; display:flex; align-items:center; justify-content:center; min-height:100vh; margin:0; padding:24px; box-sizing:border-box; }
+  .card { max-width:420px; text-align:center; }
+  h1 { font-size:1.4rem; margin-bottom:8px; }
+  p { color:#aaa; line-height:1.5; }
+  a.button { display:inline-block; margin-top:20px; padding:14px 28px; background:#5865f2; color:#fff; text-decoration:none; border-radius:12px; font-weight:600; }
+  code { background:#222; padding:2px 8px; border-radius:6px; }
+</style>
+</head>
+<body>
+  <div class="card">
+    <h1>Te invitaron a Kodx Messenger</h1>
+    <p id="msg">Instalá la app para unirte con este enlace.</p>
+    <a class="button" id="download" href="/">Descargar Kodx Messenger</a>
+  </div>
+  <script>
+    // GitHub Pages sirve este archivo como 404.html para cualquier ruta que no exista como
+    // archivo real — se usa acá como "catch-all" para /join/{codigo}, ya que un sitio estático
+    // no puede tener una ruta dinámica de verdad. Si el navegador llegó hasta acá es porque
+    // Android no pudo (o no quiso) abrir el enlace directo en la app instalada.
+    var parts = location.pathname.split('/').filter(Boolean);
+    var joinIndex = parts.indexOf('join');
+    var code = joinIndex >= 0 ? parts[joinIndex + 1] : null;
+    if (code) {
+      document.getElementById('msg').textContent =
+        'Código de invitación: ' + code + '. Instalá la app y volvé a tocar el enlace, o pegá el código adentro de Kodx Messenger.';
+      // Ajustá este href a donde esté el APK/instalador real en tu web de descarga.
+      document.getElementById('download').href = '/';
+    }
+  </script>
+</body>
+</html>
